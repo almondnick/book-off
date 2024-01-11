@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS bookoff_db;
+
+CREATE DATABASE bookoff_db;
