@@ -20,7 +20,7 @@ Comments.belongsTo(User, {
     foreignKey: "user_id",
 });
 
-Comments.belongsto(Reviews, {
+Comments.belongsTo(Reviews, {
     foreignKey: "reviews_id",
     onDelete: "CASCADE",
 });
