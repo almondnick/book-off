@@ -1,0 +1,29 @@
+[
+    {
+        "favorite_characters": "Bob, Jill",
+        "favorite_quote": "I have risen!",
+        "thoughts": "It be cooooooool",
+        "genre": "Scary!!!",
+        "pages": "999",
+        "star_review": "5",
+        "spicy_level": "69",
+        "recommend": "Yes",
+        "read_again": "Yes"
+        
+    },
+    {
+        "name": "Matt",
+        "email": "matt@mail.com",
+        "password": "password12345"
+    },
+    {
+        "name": "Peyton",
+        "email": "Peyton@mail.com",
+        "password": "password12345"
+    },
+    {
+        "name": "Sarah",
+        "email": "sarah@mail.com",
+        "password": "password12345"
+    }
+]

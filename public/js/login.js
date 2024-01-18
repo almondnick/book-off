@@ -4,8 +4,8 @@ const loginFormHandler = async (event) => { // form to handle logins
     console.log("hello");
 
     // Get values
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+    const email = document.querySelector('#loginEmail').value.trim();
+    const password = document.querySelector('#loginPassword').value.trim();
   
     if (email && password) { // make sure they exist
       const response = await fetch('/api/users/login', { // Send POST request to the api
@@ -29,9 +29,9 @@ const signupFormHandler = async (event) => { // form to handle people signing up
     event.preventDefault();
 
     // Get values
-    const name = document.querySelector('#name-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
+    const name = document.querySelector('#signupUsername').value.trim();
+    const email = document.querySelector('#signupEmail').value.trim();
+    const password = document.querySelector('#signupPassword').value.trim();
 
     if (name && email && password) { // make sure they exist
       const response = await fetch('/api/users', { // Send out a POST request to the api
