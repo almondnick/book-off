@@ -8,22 +8,32 @@
         "star_review": "5",
         "spicy_level": "69",
         "recommend": "Yes",
-        "read_again": "Yes"
+        "read_again": "Yes",
+        "book_title": "The Great Gatsby"
         
     },
     {
-        "name": "Matt",
-        "email": "matt@mail.com",
-        "password": "password12345"
+        "favorite_characters": "Tom",
+        "favorite_quote": "That's my car!",
+        "thoughts": "Jajajjajaja",
+        "genre": "Romantic?",
+        "pages": "120",
+        "star_review": "4",
+        "spicy_level": "100",
+        "recommend": "No",
+        "read_again": "Yes",
+        "book_title": "To kill a mockingbird"
     },
     {
-        "name": "Peyton",
-        "email": "Peyton@mail.com",
-        "password": "password12345"
-    },
-    {
-        "name": "Sarah",
-        "email": "sarah@mail.com",
-        "password": "password12345"
+        "favorite_characters": "Laqueesha",
+        "favorite_quote": "Where you at?",
+        "thoughts": "Really good book",
+        "genre": "Thriller",
+        "pages": "25",
+        "star_review": "3",
+        "spicy_level": "50",
+        "recommend": "Yes",
+        "read_again": "No",
+        "book_title": "The Incredible Journey"
     }
 ]
