@@ -10,7 +10,9 @@ router.get('/', async (req, res) => {
 router.get('/homepage', async (req, res) => {
 
 
-        res.render('homepage'); // login page which is our homepage
+        res.render('homepage', {
+                logged_in: req.session.logged_in 
+        }); // login page which is our homepage
 });
 
 module.exports = router;
