@@ -1,60 +1,44 @@
-<div class="row justify-content-md-center">
-    <div class="container col-md-1"></div>
-    <div class="container col-md-5">
-        <h2>Login:</h2>
-        <form class="form-horizontal loginForm">
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="email-login">Email:</label>
-                <div class="col-sm-10">
-                <input type="email" class="form-control" id="email-login" placeholder="Enter email">
+<div class="container">
+    <div class="row">
+        <!-- Login Form -->
+        <div class="col-md-6 mx-auto form-container">
+            <h2>Login</h2>
+            <form>
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="text" class="form-control" id="loginEmail" placeholder="Enter your cool username">
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="password-login">Password:</label>
-                <div class="col-sm-10">
-                <input type="password" class="form-control" id="password-login" placeholder="Enter password">
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter your super secret secure password">
                 </div>
-            </div>
-            <div class="form-group">
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">Login</button>
-                </div>
-            </div>
-        </form>
-    </div>
+                <button type="submit" class="btn btn-custom btn-block">Login</button>
+            </form>
+        </div>
 
-    <div class="container col-md-5">
-        <h2>Sign Up:</h2>
-        <form class="form-horizontal signupForm">
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="name-signup">Name:</label>
-                <div class="col-sm-10">
-                <input type="text" class="form-control" id="name-signup" placeholder="Enter your name">
-            </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="email-signup">Email:</label>
-                <div class="col-sm-10">
-                <input type="email" class="form-control" id="email-signup" placeholder="Enter email">
+        <!-- Sign Up Form -->
+        <div class="col-md-6 mx-auto form-container">
+            <h2>Sign Up</h2>
+            <form>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="text" class="form-control" id="signupEmail" placeholder="Enter your most used email">
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="password-signup">Password:</label>
-                <div class="col-sm-10">
-                <input type="password" class="form-control" id="password-signup" placeholder="Enter password">
+                <div class="form-group">
+                    <label for="signupUsername">Username</label>
+                    <input type="text" class="form-control" id="signupUsername" placeholder="Choose an awesome username">
                 </div>
-            </div>
-            <div class="form-group">
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">Sign Up</button>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" class="form-control" id="signupPassword" placeholder="Enter an ultra secret password">
                 </div>
-            </div>
-        </form>
+                <button type="submit" class="btn btn-custom btn-block">Sign Up</button>
+            </form>
+        </div>
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="./js/login.js"></script> <!-- Javascript code that handles these forms -->
