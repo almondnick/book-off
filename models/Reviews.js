@@ -50,6 +50,9 @@ Reviews.init(
        read_again: {
         type: DataTypes.STRING,
        },
+       book_title: {
+        type: DataTypes.STRING,
+       }
 
     },
     {
