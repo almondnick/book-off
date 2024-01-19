@@ -1,0 +1,175 @@
+<style>
+    * {
+        font-family: 'Playfair Display', serif;
+    }
+    body {
+        background-color: #21897e;
+    }
+    .container {
+        background-color: #ffffff;
+        border-radius: 5px;
+        margin: auto;
+        padding: 15px;
+    }
+    .card {
+        background-color: #d3d3d3;
+    }
+    .card-custom {
+        background-color: #ffffff;
+        margin: 5px;
+    }
+    .username {
+        font-size: small;
+        text-decoration: underline;
+    }
+    .btn-custom {
+        margin-left: 15px;
+        margin-bottom: 10px;
+        font-size: 14.5px;
+        width: 150px;
+        background-color: #ffffff;
+        transition-duration: 0.4s;
+    }
+    .btn-custom:hover {
+        background-color: #938581;
+        cursor: pointer;
+    }
+    .btn-custom1 {
+      font-size: 20px;
+      background-color: #d3d3d3;
+    }
+    .btn-custom1:hover {
+      border: #111111 solid 1px;
+      background-color: #d3d3d3;
+      cursor: pointer;
+    }
+    .stars {
+      font-size: 24px;
+      cursor: pointer;
+      direction: rtl;
+      display: flex;
+      justify-content: left;
+    }
+    .stars input {
+      display: none;
+    }
+    .stars label {
+      cursor: pointer;
+      color: #ccc;
+    }
+    .stars label:hover,
+    .stars input:checked ~ label {
+      color: #ffcc00;
+    }
+    .stars label:before {
+      content: '\2605';
+    }
+    .flames {
+      font-size: 24px;
+      cursor: pointer;
+      direction: rtl;
+      display: flex;
+      justify-content: left;
+    }
+    .flames input {
+      display: none;
+    }
+    .flames label {
+      cursor: pointer;
+      color: #ccc;
+    }
+    .flames label:hover,
+    .flames input:checked ~ label {
+      background-color: #d3d3d3;
+    }
+    .flames label:before {
+      content: '\1F525';
+    }
+</style>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="twistedhate.jpg" alt="Book Cover" class="img-fluid">
+    </div>
+    <div class="col-md-8">
+      <h2>Title: Book Title</h2>
+      <p>Author: Author Name</p>
+      <p>Year Published: 2022</p>
+      <p>Number of Pages: 300</p>
+      <hr>
+      <div>
+        <p class="mb-0">My Rating:</p>
+        <div class="stars mb-3">
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1"></label>
+        
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2"></label>
+        
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3"></label>
+        
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4"></label>
+        
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5"></label>
+        </div>
+        <p class="mb-0">Spicy Level:</p>
+        <div class="flames mb-3">
+            <input type="radio" id="flame1" name="flames" value="1">
+            <label class="flame-custom" for="flame1"></label>
+        
+            <input type="radio" id="flame2" name="flames" value="2">
+            <label class="flame-custom" for="flame2"></label>
+        
+            <input type="radio" id="flame3" name="flames" value="3">
+            <label class="flame-custom" for="flame3"></label>
+        
+            <input type="radio" id="flame4" name="flames" value="4">
+            <label class="flame-custom" for="flame4"></label>
+        
+            <input type="radio" id="flame5" name="flames" value="5">
+            <label class="flame-custom" for="flame5"></label>
+          </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="userFavoriteCharacter" placeholder="Who was your favorite character?">
+            <label for="userFavoriteCharacter">Favorite Character</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="userFavoriteQuote" placeholder="Who was your favorite character?">
+            <label for="userFavoriteQuote">Favorite Quote</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="userThoughts" placeholder="Who was your favorite character?">
+            <label for="userThoughts">Thoughts?</label>
+        </div>
+        <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-secondary" for="btnradio1">Paperback</label>
+          
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="btnradio2">Hardcover</label>
+          
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="btnradio3">eBook</label>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="userRecommend">
+            <label class="form-check-label" for="userRecommend">Was it worth the hype?</label>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="userReadAgain">
+            <label class="form-check-label" for="userReadAgain">Would you read it again?</label>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <button class="btn btn-custom1" type="button">Done!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
