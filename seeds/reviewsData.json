@@ -9,7 +9,7 @@
         "spicy_level": "69",
         "recommend": "Yes",
         "read_again": "Yes",
-        "book_title": "The Great Gatsby"
+        "book_isbn": "9789573481416"
         
     },
     {
@@ -22,7 +22,7 @@
         "spicy_level": "100",
         "recommend": "No",
         "read_again": "Yes",
-        "book_title": "To kill a mockingbird"
+        "book_isbn": "9782298069631"
     },
     {
         "favorite_characters": "Laqueesha",
@@ -34,6 +34,42 @@
         "spicy_level": "50",
         "recommend": "Yes",
         "read_again": "No",
-        "book_title": "The Incredible Journey"
+        "book_isbn": "9780879511647"
+    },
+    {
+        "favorite_characters": "Trudy",
+        "favorite_quote": "Oh yeah?",
+        "thoughts": "I thought it was really noice",
+        "genre": "Drama",
+        "pages": "253",
+        "star_review": "4",
+        "spicy_level": "2",
+        "recommend": "Yes",
+        "read_again": "No",
+        "book_isbn": "1735056693"
+    },
+    {
+        "favorite_characters": "Rudy",
+        "favorite_quote": "Dude where's my car?",
+        "thoughts": "Could be better",
+        "genre": "Adventure",
+        "pages": "125",
+        "star_review": "5",
+        "spicy_level": "12",
+        "recommend": "No",
+        "read_again": "Yes",
+        "book_isbn": "1735056650"
+    },
+    {
+        "favorite_characters": "Joe",
+        "favorite_quote": "Show me the money!",
+        "thoughts": "Book was very interesting.",
+        "genre": "Space",
+        "pages": "265",
+        "star_review": "2",
+        "spicy_level": "1",
+        "recommend": "No",
+        "read_again": "No",
+        "book_isbn": "9781306726849"
     }
 ]
