@@ -26,7 +26,7 @@
         }
         .book-image {
             max-width: 100%;
-            height: auto;
+            height: 300px;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
@@ -55,25 +55,26 @@
     <div class="row">
         <div class="col-md-4">
             <div class="book-card">
-                <img src="book1.jpg" alt="Book 1" class="book-image">
-                <h4>Book Title 1</h4>
-                <p>Description of Book 1.</p>
+                <h4 id="bookLike1Title">365 Spicy Seduction</h4>
+                <img class="book-image" alt="Book Cover" id="book1Image"><!-- Add image through API -->
+                <h5 id="bookLike1Author"></h5> <!-- Add author through API -->
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="book-card">
-                <img src="book2.jpg" alt="Book 2" class="book-image">
-                <h4>Book Title 2</h4>
-                <p>Description of Book 2.</p>
+                <h4 id="bookLike2Title">Clip-Clop</h4>
+                <img class="book-image" alt="Book Cover" id="book2Image"><!-- Add image through API -->
+                <h5 id="bookLike2Author"></h5> <!-- Add author through API -->
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="book-card">
-                <img src="book3.jpg" alt="Book 3" class="book-image">
-                <h4>Book Title 3</h4>
-                <p>Description of Book 3.</p>
+                <!--  <img src="book3.jpg" alt="Book 3" class="book-image"> Add image through API -->
+                <h4 id="bookLike3Title">Dolphin in the Deep</h4>
+                <img class="book-image" alt="Book Cover" id="book3Image"><!-- Add image through API -->
+                <h5 id="bookLike3Author"></h5> <!-- Add author through API -->
             </div>
         </div>
     </div>
@@ -81,25 +82,28 @@
     <div class="row">
         <div class="col-md-4">
             <div class="book-card">
-                <img src="book1.jpg" alt="Book 1" class="book-image">
-                <h4>Book Title 1</h4>
-                <p>Description of Book 1.</p>
+                <!--  <img src="book1.jpg" alt="Book 1" class="book-image"> Add image through API -->
+                <h4 id="bookPop1Title">The Dog</h4>
+                <img class="book-image" alt="Book Cover" id="bookPop1Image"><!-- Add image through API -->
+                <h5 id="bookPop1Author"></h5> <!-- Add author through API -->
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="book-card">
-                <img src="book2.jpg" alt="Book 2" class="book-image">
-                <h4>Book Title 2</h4>
-                <p>Description of Book 2.</p>
+                <!--  <img src="book2.jpg" alt="Book 2" class="book-image"> Add image through API -->
+                <h4 id="bookPop2Title">Hero</h4>
+                <img class="book-image" alt="Book Cover" id="bookPop2Image"><!-- Add image through API -->
+                <h5 id="bookPop2Author"></h5> <!-- Add author through API -->
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="book-card">
-                <img src="book3.jpg" alt="Book 3" class="book-image">
-                <h4>Book Title 3</h4>
-                <p>Description of Book 3.</p>
+                <!--  <img src="book3.jpg" alt="Book 3" class="book-image"> Add image through API -->
+                <h4 id="bookPop3Title">Fifty Shades of Grey</h4>
+                <img class="book-image" alt="Book Cover" id="bookPop3Image"><!-- Add image through API -->
+                <h5 id="bookPop3Author"></h5> <!-- Add author through API -->
             </div>
         </div>
     </div>
@@ -116,3 +120,4 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="./js/homepageApiRequests.js"></script>
