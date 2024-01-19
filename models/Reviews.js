@@ -32,12 +32,6 @@ Reviews.init(
        thoughts: {
         type: DataTypes.STRING,
        },
-       genre: {
-        type: DataTypes.STRING,
-       },
-       pages: {
-        type: DataTypes.INTEGER,
-       },
        star_review: {
         type: DataTypes.INTEGER,
        },
@@ -45,9 +39,12 @@ Reviews.init(
         type: DataTypes.INTEGER,
        },
        recommend: {
-        type: DataTypes.STRING,
+        type: DataTypes.BOOLEAN,
        },
        read_again: {
+        type: DataTypes.BOOLEAN,
+       },
+       format: {
         type: DataTypes.STRING,
        },
        book_isbn: {
