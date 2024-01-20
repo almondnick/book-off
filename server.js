@@ -15,7 +15,7 @@ const hbs = exphbs.create(); // handle bar engine
 const sess = {
     secret: 'Shhhhhhh it is a secret....Be very very quiet....',
     cookie: {
-      maxAge: 300000,
+      maxAge: 30000000,
       httpOnly: true,
       secure: false,
       sameSite: 'strict',
