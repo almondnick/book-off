@@ -32,21 +32,21 @@ Reviews.hasMany(Comments, {
 });
 
 Reviews.belongsTo(Books,{
-    foreignKey: "reviews_id",
+    foreignKey: "book_id",
 });
 
 Books.hasMany(Reviews, {
-    foreignKey: "reviews_id",
-    onDelete: "CASCADE",
-});
-
-User.hasMany(Books, {
     foreignKey: "book_id",
     onDelete: "CASCADE",
 });
 
+User.hasMany(Books, {
+    foreignKey: "user_id",
+    onDelete: "CASCADE",
+});
+
 Books.belongsTo(User, {
-    foreignKey: "books_id",
+    foreignKey: "user_id",
 });
 
 module.exports = { User, Reviews, Comments, Books };
