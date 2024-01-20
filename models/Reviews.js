@@ -47,9 +47,13 @@ Reviews.init(
        format: {
         type: DataTypes.STRING,
        },
-       book_isbn: {
-        type: DataTypes.STRING,
-       }
+       Book_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'books',
+            key: 'id',
+        },
+       },
 
     },
     {
