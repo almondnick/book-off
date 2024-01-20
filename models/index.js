@@ -1,6 +1,7 @@
 const User = require('./User');
 const Reviews = require('./Reviews');
 const Comments = require('./Comments');
+const Books = require('./Books')
 
 User.hasMany(Reviews, {
     foreignKey: "user_id",
@@ -28,6 +29,24 @@ Comments.belongsTo(Reviews, {
 Reviews.hasMany(Comments, {
     foreignKey: "reviews_id",
     onDelete: "CASCADE",
+});
+
+Reviews.belongsTo(Books,{
+    foreignKey: "reviews_id",
+});
+
+Books.hasMany(Reviews, {
+    foreignKey: "reviews_id",
+    onDelete: "CASCADE",
+});
+
+User.hasMany(Books, {
+    foreignKey: "book_id",
+    onDelete: "CASCADE",
+});
+
+Books.belongsTo(User, {
+    foreignKey: "books_id",
 });
 
 module.exports = { User, Reviews, Comments };
