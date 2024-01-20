@@ -49,4 +49,4 @@ Books.belongsTo(User, {
     foreignKey: "books_id",
 });
 
-module.exports = { User, Reviews, Comments };
+module.exports = { User, Reviews, Comments, Books };

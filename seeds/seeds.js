@@ -14,7 +14,7 @@ const seedDatabase = async () => { // Asynchronus because we want to have users 
     const users = await User.bulkCreate(userData, { // Create the users
       individualHooks: true,
       returning: true,
-      books_id: users[Math.floor(Math.random() * books.length)].id,
+      books_id: books[Math.floor(Math.random() * books.length)].id,
     });
 
 
@@ -22,7 +22,7 @@ const seedDatabase = async () => { // Asynchronus because we want to have users 
       await Reviews.create({ // Create the reviews
         ...review,
         user_id: users[Math.floor(Math.random() * users.length)].id,
-        books_id: users[Math.floor(Math.random() * books.length)].id,
+        books_id: books[Math.floor(Math.random() * books.length)].id,
       });
     }
 

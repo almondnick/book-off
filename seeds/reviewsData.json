@@ -7,8 +7,8 @@
         "pages": "999",
         "star_review": "5",
         "spicy_level": "69",
-        "recommend": "Yes",
-        "read_again": "Yes"
+        "recommend": "true",
+        "read_again": "true"
     },
     {
         "favorite_characters": "Tom",
@@ -18,8 +18,8 @@
         "pages": "120",
         "star_review": "4",
         "spicy_level": "100",
-        "recommend": "No",
-        "read_again": "Yes"
+        "recommend": "false",
+        "read_again": "true"
     },
     {
         "favorite_characters": "Laqueesha",
@@ -29,8 +29,8 @@
         "pages": "25",
         "star_review": "3",
         "spicy_level": "50",
-        "recommend": "Yes",
-        "read_again": "No"
+        "recommend": "true",
+        "read_again": "false"
     },
     {
         "favorite_characters": "Trudy",
@@ -40,8 +40,8 @@
         "pages": "253",
         "star_review": "4",
         "spicy_level": "2",
-        "recommend": "Yes",
-        "read_again": "No"    
+        "recommend": "true",
+        "read_again": "false"    
     },
     {
         "favorite_characters": "Rudy",
@@ -51,8 +51,8 @@
         "pages": "125",
         "star_review": "5",
         "spicy_level": "12",
-        "recommend": "No",
-        "read_again": "Yes"
+        "recommend": "false",
+        "read_again": "true"
     },
     {
         "favorite_characters": "Joe",
@@ -62,7 +62,7 @@
         "pages": "265",
         "star_review": "2",
         "spicy_level": "1",
-        "recommend": "No",
-        "read_again": "No"
+        "recommend": "false",
+        "read_again": "false"
     }
 ]
