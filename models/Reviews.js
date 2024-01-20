@@ -16,6 +16,9 @@ Reviews.init(
         allowNull: false,
         defaultValue: DataTypes.NOW,
        },
+       book_isbn: {
+        type: DataTypes.STRING,
+       },
        user_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -46,13 +49,6 @@ Reviews.init(
        },
        format: {
         type: DataTypes.STRING,
-       },
-       book_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'books',
-            key: 'id',
-        },
        },
 
     },

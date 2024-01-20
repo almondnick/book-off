@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { User, Reviews, Comments, Books } = require('../models');
+const { User, Reviews, Comments } = require('../models');
 
 
 router.get('/', async (req, res) => {
@@ -42,24 +42,16 @@ router.get('/singlebook/:id', async (req, res) => {
         try {
                 const isbn =  req.params.id; // isbn for the single book page
 
-                const singlebookData = await Books.findAll({
-                        where: { // WHERE blog_id == blog.id (from the first model)
-                                book_isbn: isbn
-                        },
-                });
-
-
-               const singlebook = JSON.parse(JSON.stringify(singlebookData)); // For some reasong .get wouldn't work so we had to make it an object to get id
-                //console.log(singlebook[0].id);
+                
 
                 const reviewData = await Reviews.findAll({ 
                         where: { 
-                                book_id: singlebook[0].id,
+                                book_isbn: isbn,
                         },
                         include: [{ // Include user associated with that review
                                 model: User,
                                 attributes: ['name'],
-                          }],  
+                        }],  
                 });
 
 
