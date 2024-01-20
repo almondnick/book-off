@@ -1,22 +1,28 @@
 const sequelize = require('../config/connection');
-const { User, Reviews, Comments } = require('../models');
+const { User, Reviews, Comments, Books } = require('../models');
 
 const userData = require('./userData.json');
 const reviewsData = require('./reviewsData.json');
 const commentsData = require('./commentsData.json');
+const booksData = require('./booksData.json');
 
 const seedDatabase = async () => { // Asynchronus because we want to have users before blogs and comments because they have relationships
     await sequelize.sync({ force: true });
-  
+      
+    const books = await Books.bulkCreate(booksData); // create books
+
     const users = await User.bulkCreate(userData, { // Create the users
       individualHooks: true,
       returning: true,
+      books_id: users[Math.floor(Math.random() * books.length)].id,
     });
+
 
     for (const review of reviewsData) { 
       await Reviews.create({ // Create the reviews
         ...review,
         user_id: users[Math.floor(Math.random() * users.length)].id,
+        books_id: users[Math.floor(Math.random() * books.length)].id,
       });
     }
 
