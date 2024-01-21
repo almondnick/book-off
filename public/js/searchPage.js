@@ -6,7 +6,7 @@ function badLink(){
 }
 function createList(){
 
-    fetch("https://openlibrary.org/search.json?q="+searchThis)
+    fetch("https://openlibrary.org/search.json?q="+searchThis+"&limit=15") // set limit at 15 so we don't get too many results
     .then(function (response) {
         return response.json();
     })

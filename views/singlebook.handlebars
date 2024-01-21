@@ -53,11 +53,14 @@
       <img id="bookPic" alt="Book Cover" class="img-fluid">
     </div>
     <div class="col-md-8">
-      <h2 id="bookTitle">Title: Book Title</h2>
-      <p id="bookAuthor">Author: Author Name</p>
-      <p id="bookPublishDate">Year Published: 2022</p>
-      <p id="bookPages">Number of Pages: 300</p>
-      
+      <h2 id="bookTitle">Title: N/A</h2>
+      <p id="bookAuthor">Author: N/A</p>
+      <p id="bookPublishDate">Year Published: N/A</p>
+      <p id="bookPages">Number of Pages: N/A</p>
+      <hr>
+      <h5>Summary: </h5>
+      <h6 id="bookDescription">No summary available</h6>
+      <hr>
   <!--
       <div>
         <button class="btn btn-custom1" type="button">Add to My Books</button>  
@@ -71,7 +74,11 @@
 
       <a href="/reviewpage/{{isbn}}"><button class="btn btn-custom1" type="button" data-toggle="modal" data-target="#exampleModal">Leave a Review</button></a>
       <hr>
+      {{#if reviews.length}}
       <h4>Reviews</h4>
+      {{else}}
+      <h4>No Reviews have been posted yet...</h4>
+      {{/if}}
       <!-- Loop throug our reviews -->
       {{#each reviews as |review| }}
         <div class="card">

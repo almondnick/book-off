@@ -34,7 +34,36 @@ function findBookData(bookIsbn){
 
                 // Get Year Published and put into element
                 document.getElementById("bookPages").innerHTML = "Number of Pages: " + bookData.docs[0].number_of_pages_median
-            }
+
+
+                let descriptionURL = "https://openlibrary.org" + bookData.docs[0].key + ".json";
+                console.log(descriptionURL);
+
+                //Now send out another fetch request for the description
+                fetch(descriptionURL)
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then (function (descData) {
+                        
+                        if(descData == null) { // means no books were found
+                            console.log("No description found?!");
+                        }
+                        else {
+                            if(descData.description){ // see if description actually exists
+                                if(typeof descData.description.value == "undefined") {  // check if it exists
+                                    document.getElementById("bookDescription").innerHTML = descData.description; // some api values are defined like this
+                                }
+                                else {
+                                    document.getElementById("bookDescription").innerHTML = descData.description.value; // others are defined like this
+                                }
+                            }
+                            else{
+                                console.log("No description found?!");
+                            }
+                        }
+                    });
+            } // end else
         })
 }
 
