@@ -19,7 +19,7 @@
         margin: 5px;
     }
     .username {
-        font-size: small;
+        font-weight: bold;
         text-decoration: underline;
     }
     .btn-custom {
@@ -44,7 +44,7 @@
       cursor: pointer;
     }
     .stars {
-      font-size: 24px;
+      font-size: 34px;
       cursor: pointer;
       direction: rtl;
       display: flex;
@@ -65,7 +65,7 @@
       content: '\2605';
     }
     .flames {
-      font-size: 24px;
+      font-size: 44px;
       cursor: pointer;
       direction: rtl;
       display: flex;
@@ -86,90 +86,97 @@
       content: '\1F525';
     }
 </style>
-
+<span id="isbn" style="display:none;">{{isbn}}</span> <!-- This is how we send the isbn to javascript file -->
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-4">
-      <img src="twistedhate.jpg" alt="Book Cover" class="img-fluid">
-    </div>
+    <img id="bookPic" alt="Book Cover" class="img-fluid">    </div>
     <div class="col-md-8">
-      <h2>Title: Book Title</h2>
-      <p>Author: Author Name</p>
-      <p>Year Published: 2022</p>
-      <p>Number of Pages: 300</p>
+      <h2 id="bookTitle">Title: Book Title</h2>
+      <p id="bookAuthor">Author: Author Name</p>
+      <p id="bookPublishDate">Year Published: 2022</p>
+      <p id="bookPages">Number of Pages: 300</p>
       <hr>
       <div>
-        <p class="mb-0">My Rating:</p>
-        <div class="stars mb-3">
-            <input type="radio" id="star1" name="rating" value="1">
-            <label for="star1"></label>
-        
-            <input type="radio" id="star2" name="rating" value="2">
-            <label for="star2"></label>
-        
-            <input type="radio" id="star3" name="rating" value="3">
-            <label for="star3"></label>
-        
-            <input type="radio" id="star4" name="rating" value="4">
-            <label for="star4"></label>
-        
-            <input type="radio" id="star5" name="rating" value="5">
-            <label for="star5"></label>
-        </div>
-        <p class="mb-0">Spicy Level:</p>
-        <div class="flames mb-3">
-            <input type="radio" id="flame1" name="flames" value="1">
-            <label class="flame-custom" for="flame1"></label>
-        
-            <input type="radio" id="flame2" name="flames" value="2">
-            <label class="flame-custom" for="flame2"></label>
-        
-            <input type="radio" id="flame3" name="flames" value="3">
-            <label class="flame-custom" for="flame3"></label>
-        
-            <input type="radio" id="flame4" name="flames" value="4">
-            <label class="flame-custom" for="flame4"></label>
-        
-            <input type="radio" id="flame5" name="flames" value="5">
-            <label class="flame-custom" for="flame5"></label>
+        <form class="reviewForm">
+          <h3 class="username">{{user_name}}'s Perfect Review:</h3>
+          <p class="mb-0">My Rating:</p>
+          <div class="stars mb-3">
+              <!-- Had to put star values backwords to get javascript to work (So 5 4 3 2 1) -->
+              <input type="radio" id="star1" name="rating" value="5">
+              <label for="star1"></label>
+          
+              <input type="radio" id="star2" name="rating" value="4">
+              <label for="star2"></label>
+          
+              <input type="radio" id="star3" name="rating" value="3">
+              <label for="star3"></label>
+          
+              <input type="radio" id="star4" name="rating" value="2">
+              <label for="star4"></label>
+          
+              <input type="radio" id="star5" name="rating" value="1">
+              <label for="star5"></label>
           </div>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="userFavoriteCharacter" placeholder="Who was your favorite character?">
-            <label for="userFavoriteCharacter">Favorite Character</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="userFavoriteQuote" placeholder="Who was your favorite character?">
-            <label for="userFavoriteQuote">Favorite Quote</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="userThoughts" placeholder="Who was your favorite character?">
-            <label for="userThoughts">Thoughts?</label>
-        </div>
-        <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-            <label class="btn btn-outline-secondary" for="btnradio1">Paperback</label>
+          <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="userThoughts" placeholder="Who was your favorite character?">
+              <label for="userThoughts">Thoughts?</label>
+          </div>
+          <hr>
+          <div>
+            <button class="btn btn-custom1" type="submit">Done!</button>
+          </div>
+        </form>
+
+          <!-- IMPLEMENT LATER IF TIME ALLOWS
+          <p class="mb-0">Spicy Level:</p>
+          <div class="flames mb-3">
+              <input type="radio" id="flame1" name="flames" value="1">
+              <label class="flame-custom" for="flame1"></label>
           
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-            <label class="btn btn-outline-secondary" for="btnradio2">Hardcover</label>
+              <input type="radio" id="flame2" name="flames" value="2">
+              <label class="flame-custom" for="flame2"></label>
           
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-            <label class="btn btn-outline-secondary" for="btnradio3">eBook</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="userRecommend">
-            <label class="form-check-label" for="userRecommend">Was it worth the hype?</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="userReadAgain">
-            <label class="form-check-label" for="userReadAgain">Would you read it again?</label>
-        </div>
-      </div>
-      <hr>
-      <div>
-        <button class="btn btn-custom1" type="button">Done!</button>
-      </div>
+              <input type="radio" id="flame3" name="flames" value="3">
+              <label class="flame-custom" for="flame3"></label>
+          
+              <input type="radio" id="flame4" name="flames" value="4">
+              <label class="flame-custom" for="flame4"></label>
+          
+              <input type="radio" id="flame5" name="flames" value="5">
+              <label class="flame-custom" for="flame5"></label>
+            </div>
+          <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="userFavoriteCharacter" placeholder="Who was your favorite character?">
+              <label for="userFavoriteCharacter">Favorite Character</label>
+          </div>
+          <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="userFavoriteQuote" placeholder="Who was your favorite character?">
+              <label for="userFavoriteQuote">Favorite Quote</label>
+          </div>
+          <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+              <label class="btn btn-outline-secondary" for="btnradio1">Paperback</label>
+            
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+              <label class="btn btn-outline-secondary" for="btnradio2">Hardcover</label>
+            
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+              <label class="btn btn-outline-secondary" for="btnradio3">eBook</label>
+          </div>
+          <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="userRecommend">
+              <label class="form-check-label" for="userRecommend">Was it worth the hype?</label>
+          </div>
+          <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="userReadAgain">
+              <label class="form-check-label" for="userReadAgain">Would you read it again?</label>
+          </div>
+          -->
     </div>
   </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/singlebook.js"></script>
+<script src="/js/reviewPage.js"></script>
