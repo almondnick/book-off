@@ -5,49 +5,50 @@
     body {
       background-color: #21897e;
     }
-    p {
+    h5 {
       color: #9f9f9f;
     }
     li {
-      margin: 7px;
+      margin: 15px;
       border-radius: 5px;
     }
     h2 {
       text-align: center;
     }
+    .container {
+      background-color: #cfcece;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 50px;
+    }
+    h3 {
+      font-weight: bold;
+    }
+    .book-image {
+      max-width: 100%;
+      height: 200px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    a {
+      color: black;
+      text-decoration: none;
+    }
 </style>
 
+<span id="searchText" style="display:none;">{{searchText}}</span> <!-- This is how we send the search results to javascript file -->
+
 <div class="container mt-5">
-  <ul class="list-group">
-    <li class="list-group-item">
-      <div class="row">
-        <div class="col-md-3">
-          <img src="book1_cover.jpg" alt="Book 1 Cover" class="img-fluid">
-        </div>
-        <div class="col-md-9">
-          <h4 class="mb-1">Title: Book Title</h4>
-          <p class="mb-1">Author: Author Name</p>
-          <p class="mb-1">Year Published: 2023</p>
-          <p class="mb-1">Number of Pages: 250</p>
-        </div>
-      </div>
-    </li>
-    <li class="list-group-item">
-        <div class="row">
-          <div class="col-md-3">
-            <img src="book1_cover.jpg" alt="Book 1 Cover" class="img-fluid">
-          </div>
-          <div class="col-md-9">
-            <h4 class="mb-1">Title: Book Title</h4>
-            <p class="mb-1">Author: Author Name</p>
-            <p class="mb-1">Year Published: 2023</p>
-            <p class="mb-1">Number of Pages: 250</p>
-          </div>
-        </div>
-      </li>
+<h3>{{searchText}} search results:</h3>
+  <ul class="list-group" id="searchResultList">
+    <!-- append to list for every search result through searchPage.js --> 
    </ul>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="/js/searchPage.js"></script>
+

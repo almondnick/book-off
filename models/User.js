@@ -35,13 +35,6 @@ User.init(
         len: [8],
       },
     },
-    books_id: {
-      type: DataTypes.INTEGER,
-      references: {
-          model: 'books',
-          key: 'id',
-      },
-     },
   },
   {
     hooks: {

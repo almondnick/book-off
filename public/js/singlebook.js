@@ -15,8 +15,16 @@ function findBookData(bookIsbn){
                 console.log("BOOKS FOUND!");
 
                 document.getElementById("bookTitle").innerHTML = bookData.docs[0].title; 
+                
                 // Get cover and put into element
-                document.getElementById("bookPic").src="https://covers.openlibrary.org/b/id/"+bookData.docs[0].cover_i+"-L.jpg";
+                if(typeof bookData.docs[0].cover_i == "undefined") {  // check if image exists
+                    //console.log("no image");
+                    document.getElementById("bookPic").src = "../images/noImageFound.jpg";
+
+                }
+                else { // if it exists, use it
+                    document.getElementById("bookPic").src="https://covers.openlibrary.org/b/id/"+bookData.docs[0].cover_i+"-L.jpg";
+                }
             
                 // Get author and put into element
                 document.getElementById("bookAuthor").innerHTML = "By: " + bookData.docs[0].author_name[0];

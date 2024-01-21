@@ -57,17 +57,21 @@
       <p id="bookAuthor">Author: Author Name</p>
       <p id="bookPublishDate">Year Published: 2022</p>
       <p id="bookPages">Number of Pages: 300</p>
+      
+  <!--
       <div>
-        <button class="btn btn-custom1" type="button">Add to My Books</button> <!-- Worry About later -->
+        <button class="btn btn-custom1" type="button">Add to My Books</button>  
       </div>
       <hr>
       <div>
-        <button class="btn btn-custom1" type="button">Go to My Books</button> <!-- Worry About later (SHould be a link, ISn't it in nav bar???) -->
-        <p>This book is already in your library!</p>
+        <a href="/mybooks"><button class="btn btn-custom1" type="button">Go to My Books</button></a> 
       </div>
+      <hr>
+      -->
+
+      <a href="/reviewpage/{{isbn}}"><button class="btn btn-custom1" type="button" data-toggle="modal" data-target="#exampleModal">Leave a Review</button></a>
       <hr>
       <h4>Reviews</h4>
-
       <!-- Loop throug our reviews -->
       {{#each reviews as |review| }}
         <div class="card">
@@ -75,7 +79,14 @@
             <p class="username">{{review.user.name}}</p>  
             <p>{{review.thoughts}}</p>
               <div class="star-rating">
-                {{star_review}}
+                <p id="star{{review.id}}"></p>
+                <script> // used to display the right amount of stars
+                    var numStars = "{{star_review}}";
+                    var p = document.getElementById("star{{review.id}}");
+                    for(let i = 0; i < numStars; i++){
+                      p.append("⭐");
+                    }
+                </script>
               </div>
           </div>
 
@@ -90,7 +101,7 @@
           </div>
           -->
         </div>
-        {{/each}}
+      {{/each}}
     </div>
   </div>
 </div>

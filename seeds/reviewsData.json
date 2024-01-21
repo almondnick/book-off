@@ -8,7 +8,8 @@
         "star_review": "5",
         "spicy_level": "69",
         "recommend": "true",
-        "read_again": "true"
+        "read_again": "true",
+        "book_isbn": "9789573481416"   
     },
     {
         "favorite_characters": "Tom",
@@ -19,7 +20,8 @@
         "star_review": "4",
         "spicy_level": "100",
         "recommend": "false",
-        "read_again": "true"
+        "read_again": "true",
+        "book_isbn": "9782298069631" 
     },
     {
         "favorite_characters": "Laqueesha",
@@ -30,7 +32,8 @@
         "star_review": "3",
         "spicy_level": "50",
         "recommend": "true",
-        "read_again": "false"
+        "read_again": "false",
+        "book_isbn": "9780879511647"   
     },
     {
         "favorite_characters": "Trudy",
@@ -41,7 +44,8 @@
         "star_review": "4",
         "spicy_level": "2",
         "recommend": "true",
-        "read_again": "false"    
+        "read_again": "false",
+        "book_isbn": "1735056693"    
     },
     {
         "favorite_characters": "Rudy",
@@ -52,7 +56,8 @@
         "star_review": "5",
         "spicy_level": "12",
         "recommend": "false",
-        "read_again": "true"
+        "read_again": "true",
+        "book_isbn": "1735056650"
     },
     {
         "favorite_characters": "Joe",
@@ -63,6 +68,7 @@
         "star_review": "2",
         "spicy_level": "1",
         "recommend": "false",
-        "read_again": "false"
+        "read_again": "false",
+        "book_isbn": "9781306726849"
     }
 ]
