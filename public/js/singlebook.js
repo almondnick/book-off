@@ -33,8 +33,13 @@ function findBookData(bookIsbn){
                 document.getElementById("bookPublishDate").innerHTML = "Year Published:  " + bookData.docs[0].first_publish_year
 
                 // Get Year Published and put into element
-                document.getElementById("bookPages").innerHTML = "Number of Pages: " + bookData.docs[0].number_of_pages_median
-
+                if(typeof bookData.docs[0].number_of_pages_median == "undefined") {  // check if image exists
+                    //console.log("no image");
+                    document.getElementById("bookPages").innerHTML = "Number of Pages: Unavailable";
+                }
+                else { // if it exists, use it
+                    document.getElementById("bookPages").innerHTML = "Number of Pages: " + bookData.docs[0].number_of_pages_median
+                }
 
                 let descriptionURL = "https://openlibrary.org" + bookData.docs[0].key + ".json";
                 console.log(descriptionURL);

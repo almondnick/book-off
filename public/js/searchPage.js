@@ -117,7 +117,13 @@ function createList(){
 
                 var pages = document.createElement("h5");
                 pages.classList.add("mb-1");
-                pages.innerHTML = "Number of Pages: " + bookSearchData.docs[i].number_of_pages_median;
+                if(typeof bookSearchData.docs[i].number_of_pages_median == "undefined") {  // check if image exists
+                    //console.log("no image");
+                    pages.innerHTML = "Number of Pages: Unavailable";
+                }
+                else { // if it exists, use it
+                    pages.innerHTML = "Number of Pages: " + bookSearchData.docs[i].number_of_pages_median;
+                }
                 div3.append(pages);
 
             } // end for loop
