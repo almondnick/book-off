@@ -34,13 +34,21 @@ router.get('/homepage', withAuth, async (req, res) => { // our homepage route
 
 router.get('/mybooks', withAuth, async (req, res) => { // the my books section (profile page)
         try {
+                const userData = await User.findByPk(req.session.user_id, {
+                        attributes: { exclude: ['password'] },
+                        include: [{model: Reviews}],
+                });
+        
+                const user = userData.get({ plain: true });
+
                 res.render('mybooks', {
-                        logged_in: req.session.logged_in,
-                        user_name: req.session.user_name,
-                }); 
-        }catch(err){
+                        ...user,
+                        logged_in: true
+                });
+        
+        } catch (err) {
                 res.status(500).json(err);
-        } 
+        };
 });
 
 router.get('/searchpage/:id', withAuth, async (req, res) => { // search page

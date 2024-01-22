@@ -15,27 +15,96 @@
       margin: 8px;
       border-radius: 5px;
     }
+    .list-custom:hover {
+      box-shadow: 0 0 5px 3px #111111;
+      text-decoration: none;
+    }
+    img {
+      border: 1px solid #111111;
+      border-radius: 4px;
+      padding: 5px;
+      width: 150px;
+    }
+    a {
+            color: black;
+            text-decoration: none;
+        }
+    a:hover {
+    text-decoration: none;
+}
 </style>
 
 <div class="container mt-5">
   <ul class="list-group">
-    <li class="list-group-item">
+    {{#each reviews as |review|}}
+    <li class="list-group-item list-custom">
+     <a href="/singlebook/{{review.book_isbn}}">   
       <div class="row">
         <div class="col-md-3">
-          <img src="book1_cover.jpg" alt="Book 1 Cover" class="img-fluid">
+          <img  alt="Book Cover" class="img-fluid" id="image{{review.id}}">
         </div>
         <div class="col-md-9">
-          <h4 class="mb-2">Book 1 Title</h4>
-          <p class="mb-2">Author: Author Name</p>
+          <h4 class="mb-2" id= "title{{review.id}}">Title: </h4>
+          <p class="mb-2" id= "author{{review.id}}">Author: </p>
           <div class="d-flex">
             <p class="mr-2">My Rating:</p>
-            <div class="star-rating">
-              ★★★★☆
-            </div>
+              <div class="star-rating">
+                <p id="star{{review.id}}"></p>
+                <script> // used to display the right amount of stars
+                    var numStars = "{{star_review}}";
+                    var p = document.getElementById("star{{review.id}}");
+                    for(let i = 0; i < numStars; i++){
+                      p.append("⭐");
+                    }
+                </script>
+              </div>
           </div>
         </div>
       </div>
+      </a>
     </li>
+    <script>
+      var isbn = "{{review.book_isbn}}";
+      fetch("https://openlibrary.org/search.json?q="+isbn)
+        .then(function (response) {
+            return response.json();
+        })
+        .then (function (bookData) {
+            if(bookData.docs == null) { // means no books were found
+                console.log("No books found?!");
+            }
+            else {
+                  var image = document.getElementById("image{{review.id}}");
+                  console.log("image{{review.id}}");
+                  var title = document.getElementById("title{{review.id}}");
+                  console.log("title{{review.id}}");
+                  var author = document.getElementById("author{{review.id}}");
+                  console.log(title);
+                  console.log(author);
+                  console.log(isbn);
+                  console.log(bookData);
+                  console.log("BOOKS FOUND!");
+
+                title.innerHTML = bookData.docs[0].title; 
+                author.innerHTML = "By: " + bookData.docs[0].author_name[0];
+
+                // Get cover and put into element
+                if(typeof bookData.docs[0].cover_i == "undefined") {  // check if image exists
+                    //console.log("no image");
+                    image.src = "../images/noImageFound.jpg";
+
+                }
+                else { // if it exists, use it
+                    image.src="https://covers.openlibrary.org/b/id/"+bookData.docs[0].cover_i+"-L.jpg";
+                }
+            
+                // Get author and put into element
+               
+            }
+        });
+
+    </script>
+    {{/each}}
    </ul>
 </div>
 
